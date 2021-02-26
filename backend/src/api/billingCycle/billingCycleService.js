@@ -5,16 +5,6 @@ BillingCycle.methods(['get', 'post', 'put', 'delete'])
 BillingCycle.updateOptions({ new: true, runValidators: true })
 BillingCycle.after('post', errorHandler).after('put', errorHandler)
 
-BillingCycle.route('get', (request, response, next) => {
-    BillingCycle.find({}, (error, documents) => {
-        if(!error) {
-            response.json(documents)
-        } else {
-            response.status(500).json({ errors: [error] })
-        }
-    })
-})
-
 BillingCycle.route('count', (request, response, next) => {
     BillingCycle.count((error, value) => {
         if(error) {
@@ -53,8 +43,7 @@ BillingCycle.route('summary', (request, response, next) => {
             credit: 1,
             debt: 1
         }
-    }],
-    (error, result) => {
+    }]).exec((error, result) => {
         if(error) {
             response.status(500).json({ errors: [error] })
         } else {

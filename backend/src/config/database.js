@@ -1,8 +1,17 @@
+const {
+    MONGO_URL,
+    REQUIRED_MESSAGE_GENERAL,
+    REQUIRED_MESSAGE_GENERAL_NUMBER_MIN,
+    REQUIRED_MESSAGE_GENERAL_NUMBER_MAX,
+    REQUIRED_MESSAGE_GENERAL_STRING_ENUM
+} = require('./resources')
+
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
-module.exports = mongoose.connect('mongodb://localhost/financialflow', { useNewUrlParser: true })
 
-mongoose.Error.messages.general.required = "O atributo '{PATH}' é obrigatório."
-mongoose.Error.messages.Number.min = "O atributo '{VALUE}' informado é menor que o limite mínimo de '{MIN}'."
-mongoose.Error.messages.Number.max = "O atributo '{VALUE}' informado é maior que o limite máximo de '{MIN}'."
-mongoose.Error.messages.String.enum = "O atributo '{VALUE}' não é válido para o atributo '{PATH}'"
+module.exports = mongoose.connect(MONGO_URL, {useNewUrlParser : true, useUnifiedTopology: true})
+
+mongoose.Error.messages.general.required = REQUIRED_MESSAGE_GENERAL
+mongoose.Error.messages.Number.min = REQUIRED_MESSAGE_GENERAL_NUMBER_MIN
+mongoose.Error.messages.Number.max = REQUIRED_MESSAGE_GENERAL_NUMBER_MAX
+mongoose.Error.messages.String.enum = REQUIRED_MESSAGE_GENERAL_STRING_ENUM

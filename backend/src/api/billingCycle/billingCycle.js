@@ -1,12 +1,23 @@
 const restful = require('node-restful')
 const mongoose = restful.mongoose
 
+const {
+    REQUIRED_BILLING_CYCLE_CREDIT_NAME,
+    REQUIRED_BILLING_CYCLE_CREDIT_VALUE,
+    REQUIRED_BILLING_CYCLE_DEBT_NAME,
+    REQUIRED_BILLING_CYCLE_DEBT_VALUE,
+    REQUIRED_BILLING_CYCLE_NAME,
+    REQUIRED_BILLING_CYCLE_MONTH,
+    REQUIRED_BILLING_CYCLE_YEAR
+} = require('../../config/resources')
+
+
 const creditSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [
             true,
-            'Informe o valor do atributo name (nome) para o crédito!'
+            REQUIRED_BILLING_CYCLE_CREDIT_NAME
         ]
     },
     value: {
@@ -14,7 +25,7 @@ const creditSchema = new mongoose.Schema({
         min: 0,
         required: [
             true,
-            'Informe o valor do atributo value (valor) para o crédito!'
+            REQUIRED_BILLING_CYCLE_CREDIT_VALUE
         ]
     }
 })
@@ -24,14 +35,14 @@ const debtSchema = new mongoose.Schema({
         type: String,
         required: [
             true,
-            'Informe o valor do atributo name (nome) para o débito!'
+            REQUIRED_BILLING_CYCLE_DEBT_NAME
         ]
     },
     value: {
         type: Number,
         required: [
             true,
-            'Informe o valor do atributo value (valor) para o débito!'
+            REQUIRED_BILLING_CYCLE_DEBT_VALUE
         ]
     },
     status: {
@@ -51,7 +62,7 @@ const billingCycleSchema = new mongoose.Schema({
         type: String,
         required: [
             true,
-            'Informe o valor do atributo name (nome) para o ciclo financeiro!'
+            REQUIRED_BILLING_CYCLE_NAME
         ]
     },
     month: {
@@ -60,7 +71,7 @@ const billingCycleSchema = new mongoose.Schema({
         max: 12,
         required: [
             true,
-            'Informe o valor do atributo month (mês) para o ciclo financeiro!'
+            REQUIRED_BILLING_CYCLE_MONTH
         ]
     },
     year: {
@@ -69,7 +80,7 @@ const billingCycleSchema = new mongoose.Schema({
         max: 2100,
         required: [
             true,
-            'Informe o valor do atributo year (ano) para o ciclo financeiro!'
+            REQUIRED_BILLING_CYCLE_YEAR
         ]
     },
     credits: [creditSchema],

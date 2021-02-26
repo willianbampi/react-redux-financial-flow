@@ -1,4 +1,4 @@
-const port = 3003
+const { PORT } = require('./resources')
 
 const bodyParser = require('body-parser')
 const express = require('express')
@@ -11,8 +11,8 @@ server.use(bodyParser.json())
 server.use(allowCors)
 server.use(queryParser())
 
-server.listen(port, () => {
-    console.log(`Backend is running on port: ${port}.`)
+server.listen(PORT, () => {
+    console.log(`Backend is running on port: ${PORT}.`)
 })
 
 module.exports = server
