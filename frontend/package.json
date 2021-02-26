@@ -1,0 +1,31 @@
+{
+  "name": "financial-flow-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "keywords": [],
+  "author": "Willian Bampi",
+  "license": "ISC",
+  "dependencies": {
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-scripts": "1.1.5",
+    "admin-lte": "2.3.11",
+    "axios": "0.18.0",
+    "font-awesome": "4.7.0",
+    "ionicons": "4.4.3",
+    "jquery": "2.2.3",
+    "react-redux": "5.0.7",
+    "react-redux-toastr": "7.4.0",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1",
+    "redux": "4.0.0",
+    "redux-form": "7.4.2",
+    "redux-multi": "0.1.12",
+    "redux-promise": "0.6.0",
+    "redux-thunk": "2.3.0"
+  }
+}

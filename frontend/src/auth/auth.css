@@ -1,0 +1,48 @@
+.wrapper {
+    background-color: #fff!important;
+}
+
+.login-box-body {
+    background-color: #eee;
+}
+
+.login-box button {
+    margin-left: 0px;
+}
+
+.login-box a {
+    cursor: pointer;
+    color: #00a65a;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.login-box a:hover, 
+.login-box a:active, 
+.login-box a:focus {
+    cursor: pointer;
+    color: #00a65a;
+}
+
+.login-box .login-logo {
+    color: #00a65a
+}
+
+.login-box-msg {
+    color: #00a65a;
+    font-size: 2rem;
+}
+
+.login-box .btn-block, 
+.login-box .btn-block:hover, 
+.login-box .btn-block:active, 
+.login-box .btn-block:focus {
+    background-color: #00a65a!important;
+    border-color: #047a45!important;
+    text-align: center;
+}
+
+.login-box  .login-mode{
+    width: 100%;
+    display: flex;
+}
